@@ -1,15 +1,31 @@
-def prime(n):
-    c = 0
-    for i in range(1, n+1):
-        if n % i == 0:
-            c = c+1
-    if c == 2:  
-        return 1
-    else:
-        return 0
+import java.util.*;
 
-a = int(input())
-b = int(input())
-for i in range(a, b + 1):
-    if prime(i):
-        print(i)
+public class Nig {
+        static int prime(int n) {
+        if (n <= 1) {
+            return 0; 
+        }
+        int c = 0;
+        for (int i = 1; i <= n; i++) {
+            if (n % i == 0) {
+                c++;
+            }
+        }
+        if (c == 2) {
+            return 1; 
+        } else {
+            return 0; 
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner r = new Scanner(System.in);
+        int a = r.nextInt();
+        int b = r.nextInt();
+        for (int i = a; i <= b; i++) {
+            if (prime(i) == 1) {
+                System.out.println(i);
+            }
+        }
+    }
+}
